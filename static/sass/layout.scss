@@ -1,0 +1,23 @@
+#content {
+  margin: 0 auto;
+  width: 80%;
+}
+
+header {
+  position: relative;
+  background-color: #eee;
+}
+
+footer {
+  background-color: #ccc;
+}
+
+main {
+  clear: both;
+}
+
+main,
+header,
+footer {
+  padding: 5px 15px;
+}

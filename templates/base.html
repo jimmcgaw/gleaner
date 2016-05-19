@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <title>Gleaner</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Gleaner project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" id="zerif_font-css" href="//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C400italic%7CMontserrat%3A700%7CHomemade+Apple&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  </head>
+  <body>
+      <header>
+        <h1>Gleaner</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </nav>
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </body>
+  <script type="text/javascript"></script>
+</html>
