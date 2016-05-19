@@ -120,6 +120,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Login page settings
+LOGIN_REDIRECT_URL = '/account/'
+LOGIN_URL = '/login/'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

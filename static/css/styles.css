@@ -65,6 +65,12 @@ header,
 footer {
   padding: 5px 15px; }
 
+.fr {
+  float: right; }
+
+.fl {
+  float: left; }
+
 nav ul li {
   list-style: none;
   float: left; }
@@ -100,3 +106,6 @@ a.skip-link:active {
 
 body {
   font-family: Lato; }
+
+form button.btn {
+  float: right; }
