@@ -122,6 +122,7 @@ USE_TZ = True
 
 # Login page settings
 LOGIN_REDIRECT_URL = '/account/'
+LOGOUT_REDIRECT_URL = '/login/'
 LOGIN_URL = '/login/'
 
 
