@@ -8,6 +8,9 @@ https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
 """
 
 import os
+import site
+
+site.addsitedir('~/.virtualenvs/gleaner/local/lib/python2.7/site-packages')
 
 from django.core.wsgi import get_wsgi_application
 
