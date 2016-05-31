@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>My Crop</h1>
+
+  <form action="." method="post">
+
+    {% csrf_token %}
+
+    <div class="row">
+      <div class="col-md-6">{{ form.first_name.label }}
+      {{ form.first_name }}</div>
+      <div class="col-md-6">{{ form.last_name.label }}
+      {{ form.last_name }}</div>
+    </div>
+
+
+
+    {% for field in form %}
+      <fieldset class="form-group">
+        {{ field.label }} {{ field }}
+      </fieldset>
+    {% endfor %}
+
+
+    <button type="submit" class="btn btn-primary">Save</form>
+  </form>
+
+{% endblock %}

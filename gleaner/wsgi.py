@@ -16,8 +16,11 @@ parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
 sys.path.append(parent_dir)
 
 # Activate your virtual env
-activate_env = os.path.expanduser("/home/jim/.virtualenvs/gleaner/bin/activate_this.py")
-execfile(activate_env, dict(__file__=activate_env))
+try:
+    activate_env = os.path.expanduser("/home/jim/.virtualenvs/gleaner/bin/activate_this.py")
+    execfile(activate_env, dict(__file__=activate_env))
+except IOError:
+    pass
 
 from django.core.wsgi import get_wsgi_application
 
