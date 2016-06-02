@@ -8,8 +8,13 @@
     <meta name="description" content="Gleaner project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" id="zerif_font-css" href="//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C400italic%7CMontserrat%3A700%7CHomemade+Apple&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/storystrap/css/storystrap.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- endinject -->
   </head>
   <body>
       <header>
@@ -33,6 +38,13 @@
         {% block content %}{% endblock %}
       </main>
     </div>
+    <!-- bower:js -->
+    <script src="/static/lib/jquery/dist/jquery.js"></script>
+    <script src="/static/lib/underscore/underscore.js"></script>
+    <script src="/static/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/js/index.js"></script>
+    <!-- endinject -->
   </body>
-  <script type="text/javascript"></script>
 </html>

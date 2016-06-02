@@ -1,0 +1,23 @@
+{
+  "name": "gleaner",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "jimmcgaw <jpmcgaw@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jimmcgaw/gleaner",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "underscore": "^1.8.3",
+    "bootstrap": "^3.3.6"
+  }
+}

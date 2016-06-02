@@ -12,3 +12,38 @@ gulp.task('sass', function () {
 gulp.task('sass:watch', function () {
   gulp.watch('./media/sass/**/*.scss', ['sass']);
 });
+
+gulp.task('inject', function(){
+    var wiredep = require('wiredep').stream;
+    var inject = require('gulp-inject');
+
+    var injectSrc = gulp.src([
+      './media/storystrap/css/storystrap.css',
+      './media/css/*.css',
+      './media/js/*.js'
+    ], {read: false});
+
+    var injectOptions = {
+        ignorePath: '/media'
+    };
+
+    var options = {
+      fileTypes: {
+        html: {
+          replace: {
+            js: '<script src="/static{{filePath}}"></script>',
+            css: '<link rel="stylesheet" href="junk/{{filePath}}" />'
+          }
+        }
+      },
+      bowerJson: require('./bower.json'),
+      directory: './media/lib',
+      ignorePath: '../media'
+    };
+
+    return gulp.src('./templates/*.html')
+        .pipe(wiredep(options))
+        .pipe(inject(injectSrc, injectOptions))
+        .pipe(gulp.dest('./templates'));
+
+});
