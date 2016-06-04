@@ -19,5 +19,14 @@
     "jquery": "^2.2.4",
     "underscore": "^1.8.3",
     "bootstrap": "^3.3.6"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+      ]
+    }
   }
 }

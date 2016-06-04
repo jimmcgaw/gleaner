@@ -5,7 +5,15 @@
 
 header {
   position: relative;
-  background-color: #eee;
+  text-align:left;
+  margin-top: 60px;
+
+  img.logo {
+    display: block;
+    float:left;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
 }
 
 footer {
@@ -22,10 +30,10 @@ footer {
   padding: 5px 15px;
 }
 
-.fr {
-  float: right;
+h3.sidebar-title {
+  background-color: #0098E5;
 }
 
-.fl {
-  float: left;
+nav.navbar.navbar-inverse {
+  background-color: #F05928;
 }

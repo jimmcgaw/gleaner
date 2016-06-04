@@ -10,7 +10,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch('./media/sass/**/*.scss', ['sass']);
+  gulp.watch('./media/sass/**/*.scss', ['sass', 'inject']);
 });
 
 gulp.task('inject', function(){
@@ -18,13 +18,14 @@ gulp.task('inject', function(){
     var inject = require('gulp-inject');
 
     var injectSrc = gulp.src([
-      './media/storystrap/css/storystrap.css',
-      './media/css/*.css',
-      './media/js/*.js'
-    ], {read: false});
+      './media/css/renda/*.css',
+      './media/css/styles.css',
+      './media/js/**/*.js'
+    ], {read: false });
 
     var injectOptions = {
-        ignorePath: '/media'
+        ignorePath: '/media',
+        addPrefix: '/static'
     };
 
     var options = {
@@ -32,7 +33,7 @@ gulp.task('inject', function(){
         html: {
           replace: {
             js: '<script src="/static{{filePath}}"></script>',
-            css: '<link rel="stylesheet" href="junk/{{filePath}}" />'
+            css: '<link rel="stylesheet" href="/static{{filePath}}" />'
           }
         }
       },

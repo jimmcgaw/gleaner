@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,127 +7,188 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Gleaner project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/static/storystrap/css/storystrap.css">
-    <link rel="stylesheet" href="/static/css/styles.css">
+
     <!-- bower:css -->
+    <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="/static/css/renda/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/renda/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/renda/style.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
     <!-- endinject -->
   </head>
   <body>
-      <header class="navbar navbar-bright navbar-fixed-top" role="banner">
-        <div class="container">
-          <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">Home</a>
-          </div>
-          <nav class="collapse navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/account/">My Account</a>
-              </li>
-              <li>
-                <a href="/account/gleans/">My Gleans</a>
-              </li>
-            </ul>
-            <ul class="nav navbar-right navbar-nav">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-                <ul class="dropdown-menu" style="padding:12px;">
-                  <form class="form-inline">
-                    <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-                  </form>
-                </ul>
-              </li>
-            </ul>
-          </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
         </div>
-      </header>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="#about">Lifestyle</a></li>
+            <li><a href="#contact">Travel</a></li>
+            <li><a href="#contact">Fashion</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="about.html">Contact</a></li>
+          </ul>
 
-      <div id="masthead">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-7">
-              <h1>Backyard Bounty
-                <p class="lead"></p>
-              </h1>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li><a href="/logout">logout</a></li>
+            {% else %}
+              <li><a href="/login/">login</a></li>
+            {% endif %}
+          </ul>
+
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    <header>
+      <img class="logo" src="/static/images/foodbanksbc_logo_tiny.png" alt="">
+
+      <a href="/">
+        <h1>Backyard Bounty</h1>
+      </a>
+
+    </header>
+
+    <section>
+      <div class="row">
+        <div class="col-md-8">
+          <main>{% block content %}{% endblock %}</main>
+
+        </div>
+        <div class="col-md-4 sidebar-gutter">
+          <aside>
+          <!-- sidebar-widget -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title">Support Us</h3>
+            <div class="widget-container widget-about">
+              <a class="btn btn-primary" href="https://donate.foodbanksbc.org/events/backyard-bounty-program/e54196">
+                Donate
+              </a>
+              <a href="post.html"><img src="images/author.jpg" alt=""></a>
+              <h4>Jamie Mooz</h4>
+              <div class="author-title">Designer</div>
+              <p>While everyone’s eyes are glued to the runway, it’s hard to ignore that there are major fashion moments on the front row too.</p>
             </div>
-            <div class="col-md-5">
-              <div class="well well-lg">
-                <div class="row">
-                  <div class="col-sm-12">
+          </div>
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title">Instagram</h3>
+            <p>
 
-
+            </p>
+          </div>
+          <!-- sidebar-widget -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title">Featured Posts</h3>
+            <div class="widget-container">
+              <article class="widget-post">
+                <div class="post-image">
+                  <a href="post.html"><img src="images/90x60-1.jpg" alt=""></a>
+                </div>
+                <div class="post-body">
+                  <h2><a href="post.html">The State of the Word 2014</a></h2>
+                  <div class="post-meta">
+                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
                   </div>
                 </div>
+              </article>
+              <article class="widget-post">
+                <div class="post-image">
+                  <a href="post.html"><img src="images/90x60-2.jpg" alt=""></a>
+                </div>
+                <div class="post-body">
+                  <h2><a href="post.html">Why The Muppets Needs to Channel 30 Rock</a></h2>
+                  <div class="post-meta">
+                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
+                  </div>
+                </div>
+              </article>
+              <article class="widget-post">
+                <div class="post-image">
+                  <a href="post.html"><img src="images/90x60-3.jpg" alt=""></a>
+                </div>
+                <div class="post-body">
+                  <h2><a href="post.html">The State of the Word 2014</a></h2>
+                  <div class="post-meta">
+                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
+                  </div>
+                </div>
+              </article>
+              <article class="widget-post">
+                <div class="post-image">
+                  <a href="post.html"><img src="images/90x60-4.jpg" alt=""></a>
+                </div>
+                <div class="post-body">
+                  <h2><a href="post.html">Vintage-Inspired Finds for Your Home</a></h2>
+                  <div class="post-meta">
+                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
+                  </div>
+                </div>
+              </article>
+              <article class="widget-post">
+                <div class="post-image">
+                  <a href="post.html"><img src="images/90x60-5.jpg" alt=""></a>
+                </div>
+                <div class="post-body">
+                  <h2><a href="post.html">The State of the Word 2014</a></h2>
+                  <div class="post-meta">
+                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <!-- sidebar-widget -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title">Socials</h3>
+            <div class="widget-container">
+              <div class="widget-socials">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+                <a href="#"><i class="fa fa-reddit"></i></a>
               </div>
             </div>
           </div>
-        </div><!-- /cont -->
-
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="top-spacer"> </div>
+          <!-- sidebar-widget -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title">Categories</h3>
+            <div class="widget-container">
+              <ul>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">Art</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">Featured</a></li>
+                <li><a href="#">Graphics</a></li>
+                <li><a href="#">Peoples</a></li>
+                <li><a href="#">Uncategorized</a></li>
+              </ul>
             </div>
           </div>
-        </div><!-- /cont -->
-
-      </div>
-
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-12">
-
-            <div class="panel">
-              <div class="panel-body">
-
-
-
-                {% block content %}{% endblock %}
-
-
-
-              </div>
-            </div>
-
-
-
-         	</div><!--/col-12-->
-        </div>
-      </div>
-
-
-      <hr>
-
-      <div class="container" id="footer">
-        <div class="row">
-          <div class="col col-sm-12">
-
-            <h1>Follow Us</h1>
-            <div class="btn-group">
-             <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
-      	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
-      	   <a class="btn btn-instagram btn-lg" href="#"><i class="icon-instagram icon-large"></i> Instagram</a>
-            </div>
-
           </div>
+          </aside>
         </div>
       </div>
+    </section>
+    </div><!-- /.container -->
 
-      <hr>
-
-      <hr>
+    </div>
     <!-- bower:js -->
     <script src="/static/lib/jquery/dist/jquery.js"></script>
     <script src="/static/lib/underscore/underscore.js"></script>
@@ -139,6 +196,8 @@
     <!-- endbower -->
     <!-- inject:js -->
     <script src="/static/js/index.js"></script>
+    <script src="/static/js/renda/bootstrap.js"></script>
+    <script src="/static/js/renda/bootstrap.min.js"></script>
     <!-- endinject -->
   </body>
 </html>
