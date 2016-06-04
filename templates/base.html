@@ -10,6 +10,7 @@
 
     <!-- bower:css -->
     <link rel="stylesheet" href="/static/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/lib/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- inject:css -->
     <link rel="stylesheet" href="/static/css/renda/bootstrap.css">
@@ -19,40 +20,7 @@
     <!-- endinject -->
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="#about">Lifestyle</a></li>
-            <li><a href="#contact">Travel</a></li>
-            <li><a href="#contact">Fashion</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="about.html">Contact</a></li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
-              <li><a href="/logout">logout</a></li>
-            {% else %}
-              <li><a href="/login/">login</a></li>
-            {% endif %}
-          </ul>
-
-        </div>
-        <!--/.nav-collapse -->
-      </div>
-    </nav>
+    {% include 'shared/navigation.html' %}
 
     <div class="container">
     <header>
@@ -77,8 +45,9 @@
             <h3 class="sidebar-title">Support Us</h3>
             <div class="widget-container widget-about">
               <p>
-                While everyone’s eyes are glued to the runway, it’s hard to
-                ignore that there are major fashion moments on the front row too.
+                Backyard Bounty is a 501(c)3 non-profit that operates as part of the Santa Barbara County Food
+                Bank. We harvest produce donated by farms and residents with extra produce in their backyard.
+                Support us to help feed those in need.
               </p>
               <a class="btn btn-primary" href="https://donate.foodbanksbc.org/events/backyard-bounty-program/e54196">
                 Donate
@@ -89,102 +58,28 @@
 
             </div>
           </div>
-          <div class="sidebar-widget">
-            <h3 class="sidebar-title">Instagram</h3>
-            <p>
-
-            </p>
-          </div>
           <!-- sidebar-widget -->
           <div class="sidebar-widget">
-            <h3 class="sidebar-title">Featured Posts</h3>
-            <div class="widget-container">
-              <article class="widget-post">
-                <div class="post-image">
-                  <a href="post.html"><img src="images/90x60-1.jpg" alt=""></a>
-                </div>
-                <div class="post-body">
-                  <h2><a href="post.html">The State of the Word 2014</a></h2>
-                  <div class="post-meta">
-                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-                  </div>
-                </div>
-              </article>
-              <article class="widget-post">
-                <div class="post-image">
-                  <a href="post.html"><img src="images/90x60-2.jpg" alt=""></a>
-                </div>
-                <div class="post-body">
-                  <h2><a href="post.html">Why The Muppets Needs to Channel 30 Rock</a></h2>
-                  <div class="post-meta">
-                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-                  </div>
-                </div>
-              </article>
-              <article class="widget-post">
-                <div class="post-image">
-                  <a href="post.html"><img src="images/90x60-3.jpg" alt=""></a>
-                </div>
-                <div class="post-body">
-                  <h2><a href="post.html">The State of the Word 2014</a></h2>
-                  <div class="post-meta">
-                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-                  </div>
-                </div>
-              </article>
-              <article class="widget-post">
-                <div class="post-image">
-                  <a href="post.html"><img src="images/90x60-4.jpg" alt=""></a>
-                </div>
-                <div class="post-body">
-                  <h2><a href="post.html">Vintage-Inspired Finds for Your Home</a></h2>
-                  <div class="post-meta">
-                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-                  </div>
-                </div>
-              </article>
-              <article class="widget-post">
-                <div class="post-image">
-                  <a href="post.html"><img src="images/90x60-5.jpg" alt=""></a>
-                </div>
-                <div class="post-body">
-                  <h2><a href="post.html">The State of the Word 2014</a></h2>
-                  <div class="post-meta">
-                    <span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-          <!-- sidebar-widget -->
-          <div class="sidebar-widget">
-            <h3 class="sidebar-title">Socials</h3>
+            <h3 class="sidebar-title">Connect</h3>
             <div class="widget-container">
               <div class="widget-socials">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-reddit"></i></a>
+                <a href="https://www.facebook.com/BackyardBounty/" target="_blank" title="Facebook">
+                  <i class="fa fa-2x fa-facebook-official"></i>
+                </a>
+                <a href="https://twitter.com/backyardbounty" target="_blank" title="Twitter">
+                  <i class="fa fa-2x fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/backyardbountysbc/?hl=en" target="_blank" title="Instagram">
+                  <i class="fa fa-2x fa-instagram"></i>
+                </a>
+                <a href="http://foodbanksbc.us9.list-manage1.com/subscribe?u=185cf9817698360fccb6904e7&id=bc51d4d25e" target="_blank" title="Newsletter">
+                  <i class="fa fa-2x fa-newspaper-o"></i>
+                </a>
               </div>
             </div>
           </div>
-          <!-- sidebar-widget -->
-          <div class="sidebar-widget">
-            <h3 class="sidebar-title">Categories</h3>
-            <div class="widget-container">
-              <ul>
-                <li><a href="#">Fashion</a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Featured</a></li>
-                <li><a href="#">Graphics</a></li>
-                <li><a href="#">Peoples</a></li>
-                <li><a href="#">Uncategorized</a></li>
-              </ul>
-            </div>
-          </div>
+
+
           </div>
           </aside>
         </div>
