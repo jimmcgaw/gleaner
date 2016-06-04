@@ -15,17 +15,25 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+DEBUG = True
+
 # create a locaL_settings.py file with settings you don't want
 # to check into version control.
 # Example: SECRET_KEY must be added before the app can be run.
-from local_settings import *
+try:
+    from local_settings import *
+except ImportError:
+    pass
 
+try:
+    from production_settings import *
+except ImportError:
+    pass
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
