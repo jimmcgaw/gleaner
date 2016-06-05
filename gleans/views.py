@@ -5,12 +5,15 @@ from django.contrib.auth.decorators import login_required
 from .models import Crop
 from .forms import CropForm
 
+from blogit.models import Post
+
 
 def login(request):
     return render(request, 'login.html')
 
 def index(request):
-    return render(request, 'index.html')
+    posts = Post.published.all().order_by('-created_at')[:5]
+    return render(request, 'index.html', locals())
 
 
 @login_required

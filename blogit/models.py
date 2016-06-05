@@ -12,6 +12,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True)
     author = models.ForeignKey('auth.User', null=True, blank=True)
+    content = models.TextField()
 
     is_published = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

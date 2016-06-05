@@ -6,7 +6,7 @@ from django.contrib import admin
 from django.contrib import admin
 from django.db import models as dmodels
 
-from gleans import models
+from blogit import models
 
 #get the models from myproject.models]
 mods = [x for x in models.__dict__.values() if issubclass(type(x), dmodels.base.ModelBase)]
