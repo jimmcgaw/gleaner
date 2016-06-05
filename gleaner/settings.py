@@ -27,7 +27,7 @@ from local_settings import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.prosaicmosaic.com', 'localhost']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gleans',
+    'blogit',
 ]
 
 MIDDLEWARE_CLASSES = [

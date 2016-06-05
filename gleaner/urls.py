@@ -21,6 +21,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^', include('gleans.urls')),
+    url(r'^blog/', include('blogit.urls')),
     url('^', include('django.contrib.auth.urls')),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -32,8 +32,8 @@ class Crop(models.Model):
     crop_state = models.CharField(max_length=20, blank=True)
     crop_zip = models.CharField(max_length=10, blank=True)
 
-    crop_type = models.CharField(max_length=1, choices=CROP_CHOICES, default=True)
-    receipt_preference = models.CharField(max_length=1, choices=RECEIPT_PREFERENCES, default=True)
+    crop_type = models.CharField(max_length=1, choices=CROP_CHOICES)
+    receipt_preference = models.CharField(max_length=1, choices=RECEIPT_PREFERENCES)
 
     crop_description = models.TextField()
 
