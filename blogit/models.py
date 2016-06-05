@@ -1,7 +1,9 @@
 from __future__ import unicode_literals
 
+from django.template.defaultfilters import slugify
 from django.db import models
 from django.db.models import permalink
+
 
 class PublishedPostManager(models.Manager):
     def get_queryset(self):
@@ -27,3 +29,10 @@ class Post(models.Model):
     @permalink
     def get_absolute_url(self):
         return ('view_blog_post', None, { 'slug': self.slug })
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            # Newly created object, so set slug
+            self.slug = slugify(self.title)
+
+        super(Post, self).save(*args, **kwargs)

@@ -7,7 +7,6 @@ header {
   position: relative;
   text-align:left;
   margin-top: 60px;
-  margin-bottom: 30px;
 
   img.logo {
     display: block;
@@ -37,4 +36,8 @@ h3.sidebar-title {
 
 nav.navbar.navbar-inverse {
   background-color: #F05928;
+}
+
+article h2 a {
+  text-align: left;
 }
